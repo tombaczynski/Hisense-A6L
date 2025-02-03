@@ -77,17 +77,17 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 
 Be happy with root 
 
-.
+
 [^1]: Possibly helpful for someone tips from [aimindseye](https://github.com/aimindseye) form [Hisense A9 `unlockbootloader.md`](https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md)
 Steps to Unlock Bootloader (using Windows as OS)
-- Open two command prompt windows (if using Linux, then terminal windows)
-- In first window, goto directory where adb is installed if adb is not in system path
-- In second window, goto directory where custom fastboot is downloaded
-- In first window, enter following command
-  - `adb reboot bootloader` (if using Linux, use `./adb`)
-- In second window, enter following commands
-   - To verify the Fastboot connection, type in the below command and you should get back the device ID.
-  - `fastboot devices`(if using Linux, use `./fastboot`)
+• Open two command prompt windows (if using Linux, then terminal windows).
+• In first window, goto directory where adb is installed if adb is not in system path
+• In second window, goto directory where custom fastboot is downloaded
+• In first window, enter following command
+    ◦ `adb reboot bootloader` (if using Linux, use `./adb`)
+• In second window, enter following commands
+    ◦ To verify the Fastboot connection, type in the below command and you should get back the device ID.
+    ◦ `fastboot devices`(if using Linux, use `./fastboot`)
 
 [^2]: If you are not getting any serial ID, then please install the Fastboot Drivers before proceeding further.
 
