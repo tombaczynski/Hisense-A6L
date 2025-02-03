@@ -3,13 +3,13 @@
 
 > [!WARNING]
 > Please proceed at your own risk. There are chances that performing below instructions could lead to unrecoverable phone.
->The author is not responsible for any damage caused to the phone with below instructions. You have been warned.
+The author is not responsible for any damage caused to the phone with below instructions. You have been warned.
 
 ### Pre-requisites
 - Hisense A6L with 6.08.03 software
 - qfil software
 - Edl drivers
-- ADB (Downloaded and in System Path)
+- ADB (Downloaded and in system Path)
 - Developer Options and USB Debugging Enabled
 - Installed current official Magisk (now this is `v28.1`)(https://github.com/topjohnwu/Magisk) aplikację Magisk (było v28.1). 
 > [!IMPORTANT]
@@ -33,7 +33,7 @@ Install Magisk from trustworthy source (e.g. its [GitHub repo](https://github.co
 - Install Magisk in you `boot.img`. Like this: [YouTube](https://www.youtube.com/watch?v=Wyl8asPGWUs)
 - Download patched file to computer.
 
-### Unlock bootloader
+### Unlock bootloader[^1]
 >[!NOTE]
 >Due to lack of `fastboot` drivers on Windows in this moment I have moved to Linux (which was Mint 21.2).  
 >File returned from Magisk on the phone move to that computer.  
@@ -51,13 +51,13 @@ and
 ### Unlocking bootloader
 - With phone booted in bootloader check connection with mentioned custom fastboot:  
   `#./fastboot devices`  
-- You should see device ID (on Windows shorter: `fastboot devices`)
+- You should see device ID (on Windows shorter: `fastboot devices`)[2^]
 
 Following steps were doubtfull for me.
 - `#./fastboot Hisense unlock`
 
-And right after that (that is that what worked for me - maybe it was problem with cabled - finally I used another than on beginning):
-- `#./fastboot erase avb_custom_key`
+And right after that[3^]:
+- `#./fastboot erase avb_custom_key`[4^]
 
 - Phone will reboot and display a message in Chinese to confirm a complete data wipe.Press Volume Up and wait.
 Once phone restarts, you will need to setup phone again.
@@ -78,63 +78,18 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 Be happy with root 
 
 .
-
-.
-
-.
-
-.
-
-# What we need more from below?
-
-.
-
- 
-Strony do porównania 
-
-https://www.reddit.com/r/eink/comments/16tpr96/guide_how_to_root_the_hisense_a9/?rdt=34106 
-
- 
-https://github.com/aimindseye/hisense-a9/blob/main/rootphone.md
-
-https://github.com/aimindseye/hisense-a9/tree/main
-
-
-
-### Unlock Bootloader
-
-> [!WARNING]
-> Please proceed at your own risk. There are chances that performing below instructions could lead to unrecoverable phone.
-The author is not responsible for any damage caused to the phone with below instructions. 
-
-### Pre-requisites
-- ADB Downloaded and in System Path
-- Developer Options and USB Debugging Enabled
-> [!IMPORTANT]
-> **Custom Fastboot downloaded**
-- Phone connected via USB ;)
-
-
-### Steps to Unlock Bootloader (using Windows as OS)
+[1^]: Possibly helpful for someone tips from [aimindseye](https://github.com/aimindseye) form [Hisense A9 `unlockbootloader.md`](https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md)
+###### Steps to Unlock Bootloader (using Windows as OS)
 
 - Open two command prompt windows (if using Linux, then terminal windows)
 - In first window, goto directory where adb is installed if adb is not in system path
 - In second window, goto directory where custom fastboot is downloaded
 - In first window, enter following command
-  - <code>adb reboot bootloader</code> (if using Linux, use ./adb)
+  - `adb reboot bootloader` (if using Linux, use `./adb`)
 - In second window, enter following commands
    - To verify the Fastboot connection, type in the below command and you should get back the device ID.
-  - <code>fastboot devices</code>(if using Linux, use ./fastboot)
-    
-> [!NOTE]
-> If you are not getting any serial ID, then please install the Fastboot Drivers. Before proceeding further
--
-  - <code>fastboot Hisense unlock</code> (if using Linux, use ./fastboot)
-  - <code>fastboot erase avb_custom_key</code> (if using Linux, use ./fastboot)
-  - <code>fastboot continue</code> (if using Linux, use ./fastboot)
- - Phone will reboot and display a message in Chinese to confirm a complete data wipe.Press Volume Up and wait.
- - Once phone restarts, you will need to setup phone again.
- - To confirm if bootloader is unlocked, goto Settings> System & Updates > Developer Options. Under OEM unlocking, there will be "Bootloader is already unlocked"
+  - `fastboot devices`(if using Linux, use `./fastboot`)
 
-
-**If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot**
+[2^]: If you are not getting any serial ID, then please install the Fastboot Drivers before proceeding further.
+[3^]: That is that what worked for me - maybe it was problem with cable - in the end I used a different one than at the beginning.
+[4^]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
