@@ -1,33 +1,35 @@
-Strony do porównania 
+# Hisense A6L rooting
 
-https://www.reddit.com/r/eink/comments/16tpr96/guide_how_to_root_the_hisense_a9/?rdt=34106 
+> [!WARNING]
+> Please proceed at your own risk. There are chances that performing below instructions could lead to unrecoverable phone.
+The author is not responsible for any damage caused to the phone with below instructions. You have been warned.
 
+## Pre-requisites
+- Hisense A6L with 6.08.03 software
+- qfil sotware
+- *edl drivers?*
+- ADB Downloaded and in System Path
+- Developer Options and USB Debugging Enabled
+- Installed current official Magisk (now this is `v28.1`)(https://github.com/topjohnwu/Magisk) aplikację Magisk (było v28.1). 
+> [!IMPORTANT]
+> **Custom Fastboot downloaded**
+- Phone connected via USB ;)
  
-https://github.com/aimindseye/hisense-a9/blob/main/rootphone.md 
 
- 
+## Steps to download from phone required partitions (using Windows as OS)
+>[!WARNING]
+>Use proper XML scheme for operating w partitions
+Using *Qfil* software download partions:
+- boot
+- recovery
+- vbmeta
+"Qfil" saves them with *.bin extension. Change extensions to *.img.
+That is respectively: "boot.img", "recovery.img", "vbmeta.img".
 
-Telefon z oprogramowaniem 6.08.03 
+## Pathing 
+Move `boot.img` to the phone.
 
-(Sterowniki?) 
-
-Za pomocą programu Qfil, który jest na Widnowsa zgrywamy z telefonu partycje: 
-
-boot 
-
-recovery  
-
-vbmeta 
-
-Program Qfil zapisał je do z rozszerzeniem *.bin. 
-
-Rozszerzenie zapisanych plików zmieniłem na *.img. 
-
-Dla jasności zmieniłem nazwy plików na odpowiednio: “boot.img”, “recovery.img”, “vbmeta.img”. 
-
-Plik “boot.img” przeniosłem na telefon. 
-
-Zainstalowałem na telefonie z oficjalnego źródła (https://github.com/topjohnwu/Magisk) aplikację Magisk (było v28.1). 
+Zainstalowałem na telefonie z oficjalnego źródła 
 
 W Magisk spatchowałem plik “boot.img” 
 
@@ -104,7 +106,12 @@ fastboot continue (if using Linux, use ./fastboot)
 Be happy with root 
 
  
+Strony do porównania 
 
+https://www.reddit.com/r/eink/comments/16tpr96/guide_how_to_root_the_hisense_a9/?rdt=34106 
+
+ 
+https://github.com/aimindseye/hisense-a9/blob/main/rootphone.md
 
 https://github.com/aimindseye/hisense-a9/tree/main
 # Unlock Bootloader
