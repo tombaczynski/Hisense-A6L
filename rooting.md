@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 # Hisense A6L rooting
 
 > [!WARNING]
@@ -6,7 +7,7 @@
 
 ### Pre-requisites
 - Hisense A6L with 6.08.03 software
-- qfil sotware
+- qfil software
 - Edl drivers
 - ADB (Downloaded and in System Path)
 - Developer Options and USB Debugging Enabled
@@ -19,7 +20,7 @@
 ### Steps to download from phone required partitions (using Windows as OS)
 >[!WARNING]
 >Use proper XML scheme for operating w partitions
-Using *Qfil* software download partions:
+Using *Qfil* software download partitions:
 - `boot`
 - `recovery`
 - `vbmeta`  
@@ -28,7 +29,7 @@ That is respectively: "boot.img", "recovery.img", "vbmeta.img".
 
 ### Patching 
 Move `boot.img` to the phone.
-Install Magisk from thrustworth source (e.g. its [GitHub repo](https://github.com/topjohnwu/Magisk))  
+Install Magisk from trustworthy source (e.g. its [GitHub repo](https://github.com/topjohnwu/Magisk))  
 - Install Magisk in you `boot.img`. Like this: [YouTube](https://www.youtube.com/watch?v=Wyl8asPGWUs)
 - Download patched file to computer.
 
@@ -44,7 +45,7 @@ and
 
 ### Preparation
 - Establish connection with phone: `$ adb devices`  
-  - Confirm connection on phone (check saving computers fingersprint for later use).  
+  - Confirm connection on phone (check saving computers fingerprint for later use).  
 - Reboot phone to bootloader: `adb reboot bootloader`  
 
 ### Unlocking bootloader
@@ -52,15 +53,15 @@ and
   `#./fastboot devices`  
 - You should see device ID (on Windows shorter: `fastboot devices`)
 
-Following steps where doubtfull for me.
+Following steps were doubtfull for me.
 - `#./fastboot Hisense unlock`
 
-And right after that (that is that what worked for me - maybe it was problem with cabled - finally I usen another than on begining):
+And right after that (that is that what worked for me - maybe it was problem with cabled - finally I used another than on beginning):
 - `#./fastboot erase avb_custom_key`
 
 - Phone will reboot and display a message in Chinese to confirm a complete data wipe.Press Volume Up and wait.
 Once phone restarts, you will need to setup phone again.
-Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Options. Under OEM unlocking. Option should be unavalable and greyed out.  
+Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Options. Under OEM unlocking. Option should be unavailable and greyed out.  
 
 <!--Your phone "Bootloader is already unlocked"-->
 
