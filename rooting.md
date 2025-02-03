@@ -51,13 +51,13 @@ and
 ### Unlocking bootloader
 - With phone booted in bootloader check connection with mentioned custom fastboot:  
   `#./fastboot devices`  
-- You should see device ID (on Windows shorter: `fastboot devices`)[2^]
+- You should see device ID (on Windows shorter: `fastboot devices`)[^2]
 
 Following steps were doubtfull for me.
 - `#./fastboot Hisense unlock`
 
-And right after that[3^]:
-- `#./fastboot erase avb_custom_key`[4^]
+And right after that[^3]:
+- `#./fastboot erase avb_custom_key`[^4]
 
 - Phone will reboot and display a message in Chinese to confirm a complete data wipe.Press Volume Up and wait.
 Once phone restarts, you will need to setup phone again.
@@ -78,9 +78,8 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 Be happy with root 
 
 .
-[1^]: Possibly helpful for someone tips from [aimindseye](https://github.com/aimindseye) form [Hisense A9 `unlockbootloader.md`](https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md)
-###### Steps to Unlock Bootloader (using Windows as OS)
-
+[^1]: Possibly helpful for someone tips from [aimindseye](https://github.com/aimindseye) form [Hisense A9 `unlockbootloader.md`](https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md)
+Steps to Unlock Bootloader (using Windows as OS)
 - Open two command prompt windows (if using Linux, then terminal windows)
 - In first window, goto directory where adb is installed if adb is not in system path
 - In second window, goto directory where custom fastboot is downloaded
@@ -90,8 +89,8 @@ Be happy with root
    - To verify the Fastboot connection, type in the below command and you should get back the device ID.
   - `fastboot devices`(if using Linux, use `./fastboot`)
 
-[2^]: If you are not getting any serial ID, then please install the Fastboot Drivers before proceeding further.
+[^2]: If you are not getting any serial ID, then please install the Fastboot Drivers before proceeding further.
 
-[3^]: That is that what worked for me - maybe it was problem with cable - in the end I used a different one than at the beginning.
+[^3]: That is that what worked for me - maybe it was problem with cable - in the end I used a different one than at the beginning.
 
-[4^]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
+[^4]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
