@@ -51,7 +51,7 @@ and
 ### Unlocking bootloader
 - With phone booted in bootloader check connection with mentioned custom fastboot:  
   `#./fastboot devices`  
-- You should see device ID (on Windows shorter: `fastboot devices`)[^2]
+- You should see device ID (serial number) (on Windows shorter: `fastboot devices`)[^2]
 
 Following steps were doubtfull for me.
 - `#./fastboot Hisense unlock`
@@ -70,7 +70,7 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 - Again enable *usb debugging*  
 - Authenticate connection 
 - Reboot to bootloader: `$ adb reboot bootloader`  
-- You have to see on screen info that bootloader in unlocked
+- You have to see on screen info that `DEVICE STATE` is `unlocked`
 - Now flash boot patched by magisk: `# ./fastboot flash boot boot.img`
 - Vbmeta... `# ./fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img`
 - `# ./fastboot continue` to reboot
@@ -94,3 +94,15 @@ Steps to Unlock Bootloader (using Windows as OS)
 [^3]: That is that what worked for me - maybe it was problem with cable - in the end I used a different one than at the beginning.
 
 [^4]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
+
+
+
+Program Qfil (Qualcomm Flash Image Loader tool) jest z pakietu QPST od Qualcoma.
+`D:\platform-tools>adb reboot edl`
+*Select Build Type*`Flat Build`
+*Select Programmer* > *Programmer Path*: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
+*Tools* > *Partition manager* > Confirm that you select proper programmer.
+On list of partition click with right button on interesting partition and press `Manage partition data`.
+Next: `Read data...`
+Read data are in `C:\Users\<your_user>\AppData\Roaming\Qualcomm\QFIL\COMPORT_8` what is visible in *Status* area in main window.
+
