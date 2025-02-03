@@ -80,9 +80,9 @@ Be happy with root
 
 [^1]: Possibly helpful for someone tips from [aimindseye](https://github.com/aimindseye) form [Hisense A9 `unlockbootloader.md`](https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md)
 Steps to Unlock Bootloader (using Windows as OS)
-• Open two command prompt windows (if using Linux, then terminal windows).
-• In first window, goto directory where adb is installed if adb is not in system path
-• In second window, goto directory where custom fastboot is downloaded
+• Open two command prompt windows (if using Linux, then terminal windows).  
+• In first window, goto directory where adb is installed if adb is not in system path  
+• In second window, goto directory where custom fastboot is downloaded  
 • In first window, enter following command
     ◦ `adb reboot bootloader` (if using Linux, use `./adb`)
 • In second window, enter following commands
