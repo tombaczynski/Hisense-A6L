@@ -42,15 +42,15 @@ In Settings > Other settings > Developer options:
 and
 *OEM unlocking* `enabled`
 
-##### Praparation
+#### Praparation
 - Establish connection with phone: `$ adb devices`  
   - Confirm connection on phone (check saving computers fingersprint for later use).  
 - Reboot phone to bootloader: `adb reboot bootloader`  
 
-##### Unlocking bootloader
+#### Unlocking bootloader
 - With phone booted in bootloader check connection with mentioned custom fastboot:  
   `#./fastboot devices`  
-- you should see device ID (on Windows shorter: `fastboot devices`)
+- You should see device ID (on Windows shorter: `fastboot devices`)
 
 Following steps where doubtfull for me.
 - `#./fastboot Hisense unlock`
@@ -64,7 +64,7 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 
 <!--Your phone "Bootloader is already unlocked"-->
 
-##### Flashing rooted `boot.img`
+#### Flashing rooted `boot.img`
 
 - Again enable *usb debugging*  
 - Authenticate connection 
