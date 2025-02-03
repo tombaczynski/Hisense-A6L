@@ -1,109 +1,92 @@
-# Hisense A6L rooting
+## Hisense A6L rooting
 
 > [!WARNING]
 > Please proceed at your own risk. There are chances that performing below instructions could lead to unrecoverable phone.
-The author is not responsible for any damage caused to the phone with below instructions. You have been warned.
+>The author is not responsible for any damage caused to the phone with below instructions. You have been warned.
 
-## Pre-requisites
+### Pre-requisites
 - Hisense A6L with 6.08.03 software
 - qfil sotware
-- *edl drivers?*
-- ADB Downloaded and in System Path
+- Edl drivers
+- ADB (Downloaded and in System Path)
 - Developer Options and USB Debugging Enabled
 - Installed current official Magisk (now this is `v28.1`)(https://github.com/topjohnwu/Magisk) aplikację Magisk (było v28.1). 
 > [!IMPORTANT]
-> **Custom Fastboot downloaded**
+> **Custom Fastboot downloaded** (Dedicated to Hisense A9)
 - Phone connected via USB ;)
  
 
-## Steps to download from phone required partitions (using Windows as OS)
+### Steps to download from phone required partitions (using Windows as OS)
 >[!WARNING]
 >Use proper XML scheme for operating w partitions
 Using *Qfil* software download partions:
-- boot
-- recovery
-- vbmeta
+- `boot`
+- `recovery`
+- `vbmeta`  
 "Qfil" saves them with *.bin extension. Change extensions to *.img.
 That is respectively: "boot.img", "recovery.img", "vbmeta.img".
 
-## Pathing 
+### Patching 
 Move `boot.img` to the phone.
+Install Magisk from thrustworth source (e.g. its [GitHub repo](https://github.com/topjohnwu/Magisk))  
+- Install Magisk in you `boot.img`. Like this: [YouTube](https://www.youtube.com/watch?v=Wyl8asPGWUs)
+- Download patched file to computer.
 
-Zainstalowałem na telefonie z oficjalnego źródła 
+### Unlock bootloader
+>[!NOTE]
+>Due to lack of `fastboot` drivers on Windows in this moment I have moved to Linux (which was Mint 21.2).  
+>File returned from Magisk on the phone move to that computer.  
+>`adb` installed e.g. by `sudo apt install adb` command.  
+In Settings > Other settings > Developer options:  
+*USB debugging* `enabled`  
+and
+*OEM unlocking* `enabled`
 
-W Magisk spatchowałem plik “boot.img” 
+##### Praparation
+- Establish connection with phone: `$ adb devices`  
+  - Confirm connection on phone (check saving computers fingersprint for later use).  
+- Reboot phone to bootloader: `adb reboot bootloader`  
 
-W tym momencie przesiadam się na komputer z Linuksem (z powodu braku sterowników do “fastboot” na Windowsie) 
+##### Unlocking bootloader
+- With phone booted in bootloader check connection with mentioned custom fastboot:  
+  `#./fastboot devices`  
+- you should see device ID (on Windows shorter: `fastboot devices`)
 
-(współczesny Linux Mint?) 
+Following steps where doubtfull for me.
+- `#./fastboot Hisense unlock`
 
-Spatchowany plik “boot.img” pobrałem na komputer. 
+And right after that (that is that what worked for me - maybe it was problem with cabled - finally I usen another than on begining):
+- `#./fastboot erase avb_custom_key`
 
-Na komputrze zainstalowałm “adb” za pomocą komendy “sudo apt install adb” 
+- Phone will reboot and display a message in Chinese to confirm a complete data wipe.Press Volume Up and wait.
+Once phone restarts, you will need to setup phone again.
+Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Options. Under OEM unlocking. Option should be unavalable and greyed out.  
 
-W telefonie włączyłem “opcje programisty” i włączyłem debugowanie USB. 
+<!--Your phone "Bootloader is already unlocked"-->
 
-Z komputera skomunikowałem się z telefonem za pomocą komendy: “adb devices”. 
+##### Flashing rooted `boot.img`
 
-W tym momencie na telefonie trzeba było uwierzytelnić połączenie akceptując klucz komputera. Dołączyłem opcję, że na stałe. 
-
-Rebootujemy do bootloadera: “adb reboot bootloader”. 
-
-Używam teraz programu “fastboot” przygotowanej specjalnie dla telefonu Hisense A9. 
-
-Mając uruchomiony telefon w trybie bootloadera możemy sprawdzić, czy połączenie działa za pomocą komendy “./fastboot devices”. Telefon powinien być widoczny. 
-
-Teraz moment, który był dla mnie problematyczny (https://github.com/aimindseye/hisense-a9/blob/main/unlockbootloader.md) 
-
-, 
-
-#In first window, enter following command  
-
-adb reboot bootloader (if using Linux, use ./adb) 
-
-In second window, enter following commands  
-
-To verify the Fastboot connection, type in the below command and you should get back the device ID. 
-
-fastboot devices(if using Linux, use ./fastboot) 
-
-Note 
-
-If you are not getting any serial ID, then please install the Fastboot Drivers. Before proceeding further 
-
- 
-
-fastboot Hisense unlock (if using Linux, use ./fastboot) 
-
-fastboot erase avb_custom_key (if using Linux, use ./fastboot) 
-
-Ja miałem problem z powyższą komendą - nie wiem, czy wina kabla, czy trzeba, szybko jedną komendę po drugiej 
-
- 
-
-fastboot continue (if using Linux, use ./fastboot) 
-
-Phone will reboot and display a message in Chinese (or in English?) to confirm a complete data wipe. (Press Volume Up and wait.) Confirm using button od display. 
-
-Once phone restarts, you will need to setup phone again. 
-
-To confirm if bootloader is unlocked, goto Settings> System & Updates > Developer Options. Option: OEM unlocking will be grayed out (, there will be "Bootloader is already unlocked") 
-
-D 
-
-Next again enable “usb debugging” 
-
-Authenticate connection 
-
-And reboot: adb reboot bootloader 
-
-fastboot flash boot boot.img 
-
-fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img 
-
-fastboot continue (if using Linux, use ./fastboot) 
+- Again enable *usb debugging*  
+- Authenticate connection 
+- Reboot to bootloader: `$ adb reboot bootloader`  
+- You have to see on screen info that bootloader in unlocked
+- Now flash boot patched by magisk: `# ./fastboot flash boot boot.img`
+- Vbmeta... `# ./fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img`
+- `# ./fastboot continue` to reboot
 
 Be happy with root 
+
+.
+
+.
+
+.
+
+.
+
+# What we need more from below?
+
+.
 
  
 Strony do porównania 
@@ -114,14 +97,16 @@ https://www.reddit.com/r/eink/comments/16tpr96/guide_how_to_root_the_hisense_a9/
 https://github.com/aimindseye/hisense-a9/blob/main/rootphone.md
 
 https://github.com/aimindseye/hisense-a9/tree/main
-# Unlock Bootloader
 
+
+
+### Unlock Bootloader
 
 > [!WARNING]
 > Please proceed at your own risk. There are chances that performing below instructions could lead to unrecoverable phone.
 The author is not responsible for any damage caused to the phone with below instructions. 
 
-## Pre-requisites
+### Pre-requisites
 - ADB Downloaded and in System Path
 - Developer Options and USB Debugging Enabled
 > [!IMPORTANT]
@@ -129,7 +114,7 @@ The author is not responsible for any damage caused to the phone with below inst
 - Phone connected via USB ;)
 
 
-## Steps to Unlock Bootloader (using Windows as OS)
+### Steps to Unlock Bootloader (using Windows as OS)
 
 - Open two command prompt windows (if using Linux, then terminal windows)
 - In first window, goto directory where adb is installed if adb is not in system path
