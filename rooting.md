@@ -91,5 +91,7 @@ Be happy with root
   - `fastboot devices`(if using Linux, use `./fastboot`)
 
 [2^]: If you are not getting any serial ID, then please install the Fastboot Drivers before proceeding further.
+
 [3^]: That is that what worked for me - maybe it was problem with cable - in the end I used a different one than at the beginning.
+
 [4^]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
