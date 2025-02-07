@@ -17,15 +17,27 @@ The author is not responsible for any damage caused to the phone with below inst
 - Phone connected via USB ;)
  
 
-### Steps to download from phone required partitions (using Windows as OS)
+### Download partitions from phone (using Windows as OS)
 >[!WARNING]
->Use proper XML scheme for operating w partitions
-Using *Qfil* software download partitions:
-- `boot`
-- `recovery`
-- `vbmeta`  
-"Qfil" saves them with *.bin extension. Change extensions to *.img.
-That is respectively: "boot.img", "recovery.img", "vbmeta.img".
+>Use proper XML scheme for operating with partitions
+
+To do with *Qfil* (Qualcomm Flash Image Loader tool) from package *QPST* from Qualcomm.
+Steps:
+- Establish connection with phone: `c:\platform-tools> adb devices`  
+  - Confirm connection on phone (check saving computers fingerprint for later use).  
+- Reboot phone to *edl mode*: `c:\platform-tools> adb reboot edl`
+- Using *Qfil* software download partitions:
+  - `boot`
+  - `recovery`
+  - `vbmeta`
+- Steps in Qfil software:
+  - *Select Build Type* `Flat Build`
+  - *Select Programmer* > *Programmer Path*: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
+  - *Tools* > *Partition manager* > Confirm that you select proper programmer.
+  - On list of partition click with the right button on interesting partition and press `Manage partition data`.
+  - Next: `Read data...`
+  - Read data are in `C:\Users\<your_username>\AppData\Roaming\Qualcomm\QFIL\COMPORT_8` what is visible in *Status* area in main window.
+  - *Qfil* saves them with `*.bin` extension. Change that to `*.img`. That is respectively: `boot.img`, `recovery.img`, `vbmeta.img`.
 
 ### Patching 
 Move `boot.img` to the phone.
@@ -95,14 +107,4 @@ Steps to Unlock Bootloader (using Windows as OS)
 
 [^4]: If you get any errors or do not get any response using fastboot commands then it means you are not using custom fastboot. Repeat the above steps using custom fastboot.
 
-
-
-Program Qfil (Qualcomm Flash Image Loader tool) jest z pakietu QPST od Qualcoma.
-`D:\platform-tools>adb reboot edl`
-*Select Build Type*`Flat Build`
-*Select Programmer* > *Programmer Path*: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
-*Tools* > *Partition manager* > Confirm that you select proper programmer.
-On list of partition click with right button on interesting partition and press `Manage partition data`.
-Next: `Read data...`
-Read data are in `C:\Users\<your_user>\AppData\Roaming\Qualcomm\QFIL\COMPORT_8` what is visible in *Status* area in main window.
 
