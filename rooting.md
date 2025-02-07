@@ -18,8 +18,6 @@ The author is not responsible for any damage caused to the phone with below inst
  
 
 ### Download partitions from phone (using Windows as OS)
->[!WARNING]
->Use proper XML scheme for operating with partitions
 
 To do with *Qfil* (Qualcomm Flash Image Loader tool) from package *QPST* from Qualcomm.
 Steps:
@@ -32,6 +30,8 @@ Steps:
   - `vbmeta`
 - Steps in Qfil software:
   - *Select Build Type* `Flat Build`
+  - >[!WARNING]
+Use the right programmer: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
   - *Select Programmer* > *Programmer Path*: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
   - *Tools* > *Partition manager* > Confirm that you select proper programmer.
   - On list of partition click with the right button on interesting partition and press `Manage partition data`.
