@@ -15,7 +15,7 @@ The author is not responsible for any damage caused to the phone with below inst
 > [!IMPORTANT]
 > **Custom Fastboot downloaded** (Dedicated to Hisense A9)
 - Phone connected via USB ;)
- 
+- twrp (link)
 
 ### Download partitions from phone (using Windows as OS)
 
