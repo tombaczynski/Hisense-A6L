@@ -84,6 +84,7 @@ Confirm if bootloader is unlocked, goto Settings> Other settings > Developer Opt
 - Reboot to bootloader: `$ adb reboot bootloader`  
 - You have to see on screen info that `DEVICE STATE` is `unlocked`
 - Now flash boot patched by magisk: `# ./fastboot flash boot boot.img`
+- Optionally, you can also flash custom recovery: `# ./fastboot flash boot boot.img`
 - Vbmeta... `# ./fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img`
 - `# ./fastboot continue` to reboot
 
