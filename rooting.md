@@ -15,7 +15,8 @@ The author is not responsible for any damage caused to the phone with below inst
 > [!IMPORTANT]
 > **Custom Fastboot downloaded** (Dedicated to Hisense A9)
 - Phone connected via USB ;)
-- twrp (link)
+- TWRP HLTE730T
+- Downloadables [here](https://mega.nz/folder/DrIhDJhJ#SYs0sOBSO8Z5FEUjwhalEQ), possibly need to [guess pass](guess_pass.md)
 
 ### Download partitions from phone (using Windows as OS)
 
