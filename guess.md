@@ -1,4 +1,6 @@
-# You'll probably want to solve these riddles
+# Speak, friend, and enter
+
+(You'll probably want to solve these riddles)
 
 What has roots as nobody see,  
 Is taller than trees,  
