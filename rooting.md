@@ -34,6 +34,7 @@ Steps:
   - >[!WARNING]
 Use the right programmer: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
   - *Select Programmer* > *Programmer Path*: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
+                                            (remember Hisense A6l have emmc storage not ufs)
   - *Tools* > *Partition manager* > Confirm that you select proper programmer.
   - On list of partition click with the right button on interesting partition and press `Manage partition data`.
   - Next: `Read data...`
