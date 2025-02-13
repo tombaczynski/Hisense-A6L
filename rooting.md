@@ -40,7 +40,7 @@ Use the right programmer: `prog_emmc_ufs_firehose_Sdm660_ddr_30060000.elf`
   - Next: `Read data...`
   - Read data are in `C:\Users\<your_username>\AppData\Roaming\Qualcomm\QFIL\COMPORT_8` what is visible in *Status* area in main window.
   - *Qfil* saves them with `*.bin` extension. Change that to `*.img`. That is respectively: `boot.img`, `recovery.img`, `vbmeta.img`.
-
+   (if you want backup all device with qfil you need patch.xml and try from Hisense a6 custom rom)
 ### Patching 
 Move `boot.img` to the phone.
 Install Magisk from trustworthy source (e.g. its [GitHub repo](https://github.com/topjohnwu/Magisk))  
